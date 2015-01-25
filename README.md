@@ -30,11 +30,15 @@ train/subject_train.txt: training subject information
 
 #Provided files by repository
 
-CodeBook.md: informatino about data, the variables used in the tidy data set and the transformations done by run_analysis.R
+CodeBook.md: information about data, the variables used in the tidy data set and the transformations done by run_analysis.R
 
 README.md: information about this repository
 
 run_analysis.R: R script for getting tidy data set
+
+#Approach to get tidy data set
+
+Please have a look into CodeBook.md for explanation of run_analysis.R.
 
 
 

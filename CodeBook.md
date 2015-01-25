@@ -1,7 +1,13 @@
 CodeBook
 ========
 
-#Kept Variables
+#Transformations done by run_analysis.R to get tidy data set
+
+After downloading and extracting the original data source, run_analysis.R is copied into the extracted folder.
+
+When run_analysis.R executes, first training and test data sets are read and merged into one combined data set. When merging the data sets, subject- and classification information (activity labels) are added for each data row. The names of the features are extracted from provided file "features.txt", cleaned (commata and dashes are removed) and the column names of the combined data set are changed to be more meaningful and human-readable. Then only variables, which correspond to mean or standard deviation of signals recorded, are kept. The column for the classification information (i.e. activity label) is transformed to use descriptive (human-readable) activity names with information given by provided file "activity_labels.txt". In the last step, the mean is taken over each kept variable grouped by each subject and activity. Finally the tidy data is written to file "tidy_data.txt".
+
+#Kept Variables in tidy data set
 
 Subject	- field width: 2, a number corresponding to each participating person,  range: 1-30  
 Activity - field width: 18, activity types, range: 1 WALKING, 2 WALKING_UPSTAIRS, 3 WALKING_DOWNSTAIRS, 4 SITTING, 5 STANDING, 6 LAYING   
@@ -63,7 +69,7 @@ fBodyBodyAccJerkMagstd - field width: 18, Frequency domain body jerk magnitude s
 fBodyBodyGyroMagstd - field width: 18, Frequency domain gyroscope magnitude standard deviation, range: -1 - +1 	
 fBodyBodyGyroJerkMagstd - field width: 18, Frequency domain gyroscope jerk magnitude standard deviation, range: -1 - +1 
  
-#About Data
+#About Original Data
 
 Information provided by features_info.txt:
 
@@ -75,9 +81,6 @@ Finally a Fast Fourier Transform (FFT) was applied to some of these signals prod
 
 These signals were used to estimate variables of the feature vector for each pattern:  
 '-XYZ' is used to denote 3-axial signals in the X, Y and Z directions."
- 
-#Transformations
 
-First training and test data sets were merged into one combined data set. For each data row, subject- and classification information were added. Then only variables, which correspond to mean or standard deviation of signals recorded, were kept. The names of the features were extracted from file "features.txt", cleaned and added to the combined data set. The column for the classification information (i.e. activity label) was transformed to use descriptive activity names with information given in "activity_labels.txt". Finally the mean was taken over each variable by each subject and each activity and written to file.
 
 
